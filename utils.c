@@ -80,7 +80,7 @@ char *sanitize_value(const char *value, size_t value_size)
 }
 
 
-const size_t BINARY_SIDECAR_EXT_SIZE = strlen(BINARY_SIDECAR_EXT);
+const size_t BINARY_SIDECAR_EXT_SIZE = sizeof(BINARY_SIDECAR_EXT)-1;
 
 const int filename_is_sidecar(const char *string) {
     if(string == NULL)
@@ -102,10 +102,10 @@ const int filename_is_sidecar(const char *string) {
 #define SECURITY_NAMESPACE "security."
 #define TRUSTED_NAMESPACE "trusted."
 
-const size_t USER_NAMESPACE_SIZE     = strlen(USER_NAMESPACE);
-const size_t SYSTEM_NAMESPACE_SIZE   = strlen(SYSTEM_NAMESPACE);
-const size_t SECURITY_NAMESPACE_SIZE = strlen(SECURITY_NAMESPACE);
-const size_t THRUSTED_NAMESPACE_SIZE = strlen(TRUSTED_NAMESPACE);
+const size_t USER_NAMESPACE_SIZE     = sizeof(USER_NAMESPACE)-1;
+const size_t SYSTEM_NAMESPACE_SIZE   = sizeof(SYSTEM_NAMESPACE)-1;
+const size_t SECURITY_NAMESPACE_SIZE = sizeof(SECURITY_NAMESPACE)-1;
+const size_t THRUSTED_NAMESPACE_SIZE = sizeof(TRUSTED_NAMESPACE)-1;
 
 enum namespace get_namespace(const char *name) {
     size_t name_size = strlen(name);
